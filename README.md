@@ -2,7 +2,10 @@
 
 Este repositório contém os exercícios do curso de Qualidade de Software da EBAC
 
-## Exercício 1 - Módulo 8
+## Pasta "docs"
 
--   Instalada a extensão Cucumber (Gherkin) Full Support de Alexander Krechik no Visual Studio Code;
--   Escritos os cenários de teste em Gherkin para as funcionalidades de login, cadastro e configuração de produto do site da EBAC.
+Contém toda a documentação desenvolvida durante o curso
+
+## Pasta "gherkin"
+
+Contém cenários de teste escritos em Gherkin

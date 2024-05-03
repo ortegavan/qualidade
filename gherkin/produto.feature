@@ -1,4 +1,5 @@
-#language: pt
+# language: pt
+# arquivo: gherkin/produto.feature
 
 Funcionalidade: Configurar produto
 Como cliente da EBAC-SHOP
@@ -10,22 +11,16 @@ Contexto:
 Dado que eu acesse a página de detalhes de um produto na EBAC-SHOP
 
 Cenário: Produto disponível nas cores e tamanhos escolhidos
-Quando eu escolher o tamanho "M"
-E a cor "Orange"
-E a quantidade 2
+Quando eu escolher o tamanho "M", cor "Orange" e quantidade 2
 Então o botão de adicionar ao carrinho deve estar habilitado
 
 Cenário: Produto indisponível no tamanho escolhido
-Quando eu escolher o tamanho "XL"
-E a cor "Orange"
-E a quantidade 1
+Quando eu escolher o tamanho "XL", cor "Orange" e quantidade 1
 Então o botão de adicionar ao carrinho deve estar desabilitado
 E deve exibir a mensagem "Produto indisponível no tamanho escolhido"
 
 Cenário: Múltiplos produtos escolhidos
-Quando eu escolher o tamanho "M"
-E a cor "Orange"
-E a quantidade 12
+Quando eu escolher o tamanho "M", cor "Orange" e quantidade 12
 Então o botão de adicionar ao carrinho deve estar desabilitado
 E deve exibir a mensagem "Limite de 10 produtos por compra"
 

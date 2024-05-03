@@ -1,27 +1,32 @@
-            #laguage: pt
+# language: pt
+# arquivo: gherkin/login.feature
 
-            Funcionalidade: Efetuar login
-            Como cliente da EBAC-SHOP
-            Quero fazer o login (autenticação) na plataforma
-            Para visualizar meus pedidos
+Funcionalidade: Efetuar login
+Como cliente da EBAC-SHOP
+Quero fazer o login (autenticação) na plataforma
+Para visualizar meus pedidos
 
-            Contexto:
-            Dado que eu acesse a página de login da EBAC-SHOP
+Regra: campos usuário e senha são obrigatórios
 
-            Cenário: Autenticação válida
-            Quando eu digitar o usuário "vanessa@example.org"
-            E a senha "senha@123"
-            Então deve redirecionar para a página de pedidos
+Contexto:
+Dado que eu acesse a página de login da EBAC-SHOP
 
-            Cenário: Usuário inexistente
-            Quando eu digitar o usuário <usuario>
-            E a "senha@123"
-            Então deve exibir uma mensagem de alerta: "Usuário e/ou senha inválidos"
+Cenário: Autenticação válida
+Quando eu digitar o usuário "vanessa@example.org"
+E a senha "senha@123"
+Então deve redirecionar para a página de pedidos
 
-            Exemplos:
-            | usuario                    |
-            | "inexistente1@example.org" |
-            | "inexistente2@example.org" |
-            | "inexistente3@example.org" |
-            | "inexistente4@example.org" |
-            | "inexistente5@example.org" |
+Cenário: Usuário inexistente
+Quando eu digitar o usuário "inexistente@example.org"
+E a "senha@123"
+Então deve exibir uma mensagem de alerta: "Usuário e/ou senha inválidos"
+
+Cenário: Senha inválida
+Quando eu digitar o usuário "vanessa@example.org"
+E a senha "123456"
+Então deve exibir uma mensagem de alerta: "Usuário e/ou senha inválidos"
+
+Cenário: E-mail inválido
+Quando eu digitar o usuário "vanessa"
+E a senha "senha@123"
+Então deve exibir uma mensagem de alerta: "Endereço de e-mail inválido"
