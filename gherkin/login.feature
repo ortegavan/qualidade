@@ -6,7 +6,7 @@ Como cliente da EBAC-SHOP
 Quero fazer o login (autenticação) na plataforma
 Para visualizar meus pedidos
 
-Regra: campos usuário e senha são obrigatórios
+Regra: campos "usuário" e "senha" são obrigatórios
 
 Contexto:
 Dado que eu acesse a página de login da EBAC-SHOP
