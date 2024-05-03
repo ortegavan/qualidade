@@ -12,6 +12,7 @@
             E clicar no botão de adicionar ao carrinho
             Então o sistema deve exibir a mensagem <mensagem>
 
+            Exemplos:
             | tamanho | cor      | quantidade | mensagem                                    |
             | "M"     | "Orange" | 2          | "Produto adicionado ao carrinho"            |
             | "XL"    | "Orange" | 1          | "Produto indisponível no tamanho escolhido" |
