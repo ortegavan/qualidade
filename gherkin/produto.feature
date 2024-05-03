@@ -1,29 +1,18 @@
-# language: pt
-# arquivo: gherkin/produto.feature
+            # language: pt
+            # arquivo: gherkin/produto.feature
 
-Funcionalidade: Configurar produto
-Como cliente da EBAC-SHOP
-Quero configurar meu produto de acordo com meu tamanho e gosto
-E escolher a quantidade
-Para depois inserir no carrinho
+            Funcionalidade: Configurar produto
+            Como cliente da EBAC-SHOP
+            Quero configurar o produto de acordo com meu tamanho e gosto e escolher a quantidade
+            Para depois inserir no carrinho
 
-Contexto:
-Dado que eu acesse a página de detalhes de um produto na EBAC-SHOP
+            Esquema do cenário: Configurar produto com diferentes características
+            Dado que eu acesse a página de detalhes de um produto na EBAC-SHOP
+            Quando eu escolher o tamanho <tamanho>, cor <cor> e quantidade <quantidade>
+            E clicar no botão de adicionar ao carrinho
+            Então o sistema deve exibir a mensagem <mensagem>
 
-Cenário: Produto disponível nas cores e tamanhos escolhidos
-Quando eu escolher o tamanho "M", cor "Orange" e quantidade 2
-Então o botão de adicionar ao carrinho deve estar habilitado
-
-Cenário: Produto indisponível no tamanho escolhido
-Quando eu escolher o tamanho "XL", cor "Orange" e quantidade 1
-Então o botão de adicionar ao carrinho deve estar desabilitado
-E deve exibir a mensagem "Produto indisponível no tamanho escolhido"
-
-Cenário: Múltiplos produtos escolhidos
-Quando eu escolher o tamanho "M", cor "Orange" e quantidade 12
-Então o botão de adicionar ao carrinho deve estar desabilitado
-E deve exibir a mensagem "Limite de 10 produtos por compra"
-
-Cenário: Configuração resetada
-Quando eu clicar no botão de "Limpar"
-Então o tamanho, cor e quantidade devem ser resetados
+            | tamanho | cor      | quantidade | mensagem                                    |
+            | "M"     | "Orange" | 2          | "Produto adicionado ao carrinho"            |
+            | "XL"    | "Orange" | 1          | "Produto indisponível no tamanho escolhido" |
+            | "M"     | "Blue"   | 12         | "Limite de 10 produtos por compra"          |
